@@ -1,10 +1,12 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { type Config } from '@sveltejs/adapter-vercel';
 import { unfurl } from 'unfurl.js';
 
-export const config = {
+export const config: Config = {
     isr: {
         expiration: false,
+        allowQuery: ["url"],
     },
 };
 
